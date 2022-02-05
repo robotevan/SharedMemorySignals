@@ -1,8 +1,10 @@
 ## CHILD PROCESS
 ->Every 0.25s, the child writes a random number to shared memory (uint32_t) If this number is greater
  than the defined threshold, it will send SIGUSER1 to the parent PROCESS.
+
 -> Any time the child writes to the shared memory, it locks the binary mutext, preventing the PARENT
  from accessing, also removing the need of pause() in the child.
+
 -> The semaphore uses sem_timedwait() to make sure the process will end if it cannot aquire the
  semaphore in less than 5s (ex: press ctrl+C while parent/child has the semaphore)
 
