@@ -10,11 +10,15 @@
 
 ## PARENT PROCESS
 -> The parent loops while a sig_count < 10 (print 10 times)
+
 -> If the parent was signaled, it will aquire the semaphore, allowing it to access the memory
+
 -> After printing the random number, reset the print_rand flag, increment sig_count\
+
 -> The semaphore uses sem_timedwait() to make sure the process will end if it cannot aquire the
  semaphore in less than 5s (ex: press ctrl+C while parent/child has the semaphore)
 
 
 -> After both processes finish, the shared memory is destroyed, along with the named semaphore
+
 -> Compile with "make", uses pthread for named semaphore
