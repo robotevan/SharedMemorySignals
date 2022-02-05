@@ -1,5 +1,3 @@
-# The program I wrote will print a random number 10 times if greater than 10000000
-
 ## CHILD PROCESS
 ====================================================================================================
 ->Every 0.25s, the child writes a random number to shared memory (uint32_t) If this number is greater
